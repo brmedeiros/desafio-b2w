@@ -28,7 +28,7 @@ export default class Sidebar extends React.Component {
 		<img src={img_source} alt='avatar'/>
 	      </div>
 	      <div className='py-2'>
-		<h2><strong>{this.props.name.toUpperCase()}</strong></h2>
+		<h2 style={{letterSpacing: 2}}><strong>{this.props.name.toUpperCase()}</strong></h2>
 		<p className='small'>{this.props.profession.toUpperCase()}</p>
 		<hr className='hr-sidebar my-4'/>
 	      </div>

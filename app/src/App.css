@@ -8,6 +8,10 @@
     border-color: white;
 }
 
+.hr-large-section {
+    border-color: black;
+}
+
 .App-logo {
     animation: App-logo-spin infinite 20s linear;
     height: 80px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import api from './components/apirequest.js';
 import Sidebar from './components/sidebar.js';
+import LargeSection from './components/large-section.js';
 import './App.css';
 
 export default class App extends React.Component {
@@ -38,7 +39,7 @@ export default class App extends React.Component {
 				     skills={profile.skills}/>
 		      </div>
 		<div className='col px-0 py-0'>
-		  <h1>{person.profile.name}</h1>
+		      <LargeSection experiences={profile.experience} education={profile.education}/>
 		</div>
 	      </div>
 	    </div>
