@@ -1,21 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import api from './components/apirequest.js';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+export default class App extends React.Component {
+    constructor(props) {
+	super(props);
+	this.state = {
+	    person: {},
+	    isLoading: true,
+	    fetchError: false
+	};
+    }
+
+    componentDidMount() {
+	api.request()
+	    .then(data => {
+		this.setState({person: data, isLoading: false});
+	    }).catch(() => {
+		this.setState({isLoading: false, fetchError: true});
+	    });
+    }
+
+    render() {
+	const {person, isLoading, fetchError} = this.state;
+	return(
+	<div className="App">
+	  {isLoading
+	      ? <h1>wait</h1>
+	      : <h1>{person.profile.name}</h1>
+	  }
+	  {fetchError && !isLoading
+	      ? <div className='validation-text text-danger small'>Falha de conexão com o serviodor API...</div>
+	      : null
+	  }
+	</div>
     );
   }
 }
-
-export default App;
