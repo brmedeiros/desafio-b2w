@@ -2,6 +2,20 @@ import React from 'react';
 //import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 //import { faList, faUserPlus } from '@fortawesome/fontawesome-free-solid';
 
+function SkillList(props) {
+    const skills = props.skills;
+    const listItems = skills.map((skill) =>
+				 <li key={skill.name}>
+				   <p className='small mb-1'>{skill.name.toUpperCase()}</p>
+				   <div className='progress w-75 mx-auto bg-dark border border-light rounded-0 mb-4' style={{height: 12}}>
+				     <div className='progress-bar bg-light' style={{width: skill.value}} role='progressbar'></div>
+				   </div>
+				 </li>);
+    return (
+	<ul className='list-unstyled'>{listItems}</ul>
+    );
+}
+
 export default class Sidebar extends React.Component {
     render() {
 	//let img_source = this.props.logo;
@@ -36,10 +50,7 @@ export default class Sidebar extends React.Component {
 	      <div className='pb-2'>
 		<p className='small mb-2'><strong>SKILLS</strong></p>
 		<hr className='hr-sidebar mt-1 w-50'/>
-		<p className='small mb-2'>{this.props.skills[0].name.toUpperCase()}</p>
-		<div className='progress w-75 mx-auto bg-dark border border-light rounded-0' style={{height: 15}}>
-		  <div className='progress-bar bg-light' style={{width: this.props.skills[0].value}} role='progressbar'></div>
-		</div>
+		<SkillList skills={this.props.skills}/>
 	      </div>
 
 
