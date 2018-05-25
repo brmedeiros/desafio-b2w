@@ -1,4 +1,8 @@
 import React from 'react';
+
+import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import { faCircleNotch } from '@fortawesome/fontawesome-free-solid';
+
 import api from './components/apirequest.js';
 import Sidebar from './components/sidebar.js';
 import LargeSection from './components/large-section.js';
@@ -11,7 +15,7 @@ export default class App extends React.Component {
     constructor(props) {
 	super(props);
 	this.state = {
-	    person: null,
+	    person: {},
 	    isLoading: true,
 	    fetchError: false
 	};
@@ -46,7 +50,9 @@ export default class App extends React.Component {
 	return(
 	<div className='App container-fluid mt-2 px-0'>
 	  {isLoading
-	      ? <h1>Loading</h1>
+	      ? <div className='text-center mt-5'>
+                  <FontAwesomeIcon key='spinnerIcon' className='fa-2x fa-fadein-spin mt-5' icon={faCircleNotch}/>
+		</div>
 	      :
 	      <div className='border'>
 		<div className='row mx-auto'>
