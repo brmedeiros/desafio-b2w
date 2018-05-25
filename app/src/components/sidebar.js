@@ -18,10 +18,9 @@ function SkillList(props) {
 
 export default class Sidebar extends React.Component {
     render() {
-	//let img_source = this.props.logo;
-	let img_source = 'https://raw.githubusercontent.com/b2w-marketplace/code-challenge/master/files/avatar-dev.png';
-	//img_source = img_source.slice(0,8) + 'raw.githubusercontent' + img_source.slice(14);
-	//console.log(img_source);
+	let img_source = this.props.image;
+	//replace 'blob' with 'raw' on the image URL
+	img_source = img_source.slice(0,50) + 'raw' + img_source.slice(54);
 	return(
 	    <nav className='navbar navbar-expand-lg bg-dark text-light text-center d-block'>
 	      <div className='mx-auto text-center py-2'>
