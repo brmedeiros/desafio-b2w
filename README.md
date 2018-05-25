@@ -13,8 +13,8 @@ Altenativamente, baixe e extraia o arquivo zip na pasta de destino:
 
 Utlizando a linha de comando, mude para a pasta '/app' dentro da pasta de destino e execute os seguintes comandos:
 
-`npm install`
-`npm run build`
+`npm install`\
+`npm run build`\
 `npm run start-prod`
 
 Após estes passos o applicativo deve rodar no servido de produção iniciado.
