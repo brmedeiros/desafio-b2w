@@ -21,8 +21,8 @@ Após estes passos o applicativo deve rodar no servido de produção iniciado.
 
 #### Rodando testes
 
-Para rodar os testes incluídos execute o comando:
+Para rodar os testes incluídos execute o comando
 
 `npm test`
 
-na pasta de destino após `npm install` ter sido executado.
+na pasta '/app' no interior da pasta de destino após `npm install` ter sido executado.
